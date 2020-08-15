@@ -14,7 +14,8 @@ class Login extends Controller
     
 	public function index()
 	{
-		return view('login');
+		//return view('painel_planos');
+        return view('cadastro');
     }
     
     public function validar()
@@ -38,5 +39,12 @@ class Login extends Controller
         $this->session->destroy();
 
         return redirect()->to(site_url('/login'));
+    }
+
+
+
+    public function painel()
+    {
+        return view('painel');
     }
 }
