@@ -14,8 +14,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="<?php echo site_url('planos'); ?>">Planos</a>
-          <a class="dropdown-item" href="<?php echo site_url('usuario/new'); ?>">Sair</a>
-			    <a class="dropdown-item" href="<?php echo site_url('login/logout'); ?>">Usuario</a>
+          <a class="dropdown-item" href="<?php echo site_url('usuario/new'); ?>">Usuario</a>
+			    <a class="dropdown-item" href="<?php echo site_url('login/logout'); ?>">Sair</a>
           <div class="dropdown-divider"></div>
 			    <a class="dropdown-item" href="<?php echo site_url('/home'); ?>">Dashboard</a>
         </div>
