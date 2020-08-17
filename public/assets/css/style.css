@@ -116,7 +116,7 @@ html,body {
     position: relative;
     margin-bottom: 20px;
 }
-.css-form-cadastro .form-group input[type='email'],.css-form-cadastro .form-group input[type='text']{
+.css-form-cadastro .form-group input[type='email'],.css-form-cadastro .form-group input[type='text'],.css-form-cadastro .form-group input[type='password']{
     position: relative;
     width: 100%;
     height: 55px;
