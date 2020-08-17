@@ -1,3 +1,5 @@
+<?php $this->session = \Config\Services::session(); ?>
+
 <nav class="navbar navbar-expand-md navbar-white fixed-top bg-white css-navbar py-2">
     <div class="container">
   <a class="navbar-brand text-dark fw-600 f-18" href="#"><img src="http://smartdemowp.com/detox/wp-content/themes/detox/assets/images/small-logo.svg" alt="Logo"></a>

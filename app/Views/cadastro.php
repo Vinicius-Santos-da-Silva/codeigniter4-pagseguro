@@ -14,6 +14,10 @@
    
         <div class="row mt-4 ">
             <div class="col-lg-6 col-md-12 col-sm-12 pr-5">
+
+            <?php if($this->session->markAsFlashdata('mensagem')){
+                echo $this->session->markAsFlashdata('mensagem');
+            } ?>
                 
 
                 <h1 class="fw-700">Data Analytics Techniques with 
@@ -62,6 +66,8 @@
 
             <div class="col-lg-6 col-md-12 col-sm-12">
 
+            <?php $this->session; ?>
+
 
                 <div role="form" class="css-div-form" >
                     <div class="row">
@@ -71,50 +77,32 @@
                     </div>
                     
                    
-                    <form action="/detox/contact/#wpcf7-f921-p13-o1" method="post" class="css-form-cadastro" >
+                    <form action="<?php echo site_url('usuario/post'); ?>" method="post" class="css-form-cadastro" >
                         <div class="default-form" id="contact-form" >
                             <div class="row ">
                                 <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                     <span class="">
-                                        <input type="text" name="" value="" size="40" class="form-control" aria-invalid="false" placeholder="Teste">
+                                        <input type="text" name="nome" value="" size="40" class="form-control" aria-invalid="false" placeholder="Nome de usuário">
                                     </span>
                                 </div>  
-                                <div class="col-lg-6 col-md-6 col-sm-12 form-group"> 
+                                <div class="col-lg-12 col-md-12 col-sm-12 form-group"> 
                                     <span class="">
-                                        <input type="text" name="nome" value="" size="40" class="form-control" aria-invalid="false" placeholder="Nome">
-                                    </span>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12 form-group"> 
-                                    <span class="">
-                                        <input type="email" name="email" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" placeholder="Email">
-                                    </span>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                    <span class="">
-                                        <input type="text" name="" value="" size="40" class="form-control" aria-invalid="false" placeholder="Teste">
-                                    </span>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12 form-group"> 
-                                    <span class="">
-                                        <input type="text" name="" value="" size="40" class="form-control" aria-invalid="false" placeholder="Teste">
-                                    </span>
-                                </div>     
-                                 <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                    <span class="">
-                                        <input type="text" name="" value="" size="40" class="form-control" aria-invalid="false" placeholder="Teste">
+                                        <input type="email" name="email" value="" size="40" class="form-control" aria-invalid="false" placeholder="Email">
                                     </span>
                                 </div>
 
                                 <div class="col-lg-6 col-md-6 col-sm-12 form-group"> 
                                     <span class="">
-                                        <input type="text" name="" value="" size="40" class="form-control" aria-invalid="false" placeholder="Teste">
+                                        <input type="password" name="senha" value="" size="40" class="form-control" aria-invalid="false" placeholder="Senha">
                                     </span>
-                                </div>     
-                                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-12 form-group"> 
                                     <span class="">
-                                        <input type="text" name="" value="" size="40" class="form-control" aria-invalid="false" placeholder="Teste">
+                                        <input type="password" name="confirmar_senha" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" placeholder="Confirmar senha">
                                     </span>
-                                </div>                  
+                                </div>
+                 
                                 <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn"> 
                                     <button class="css-button-color">Registrar</button>
                                 </div>
