@@ -25,15 +25,23 @@ class UsuarioModel extends Model
     {
 
         if(!isset($dados['nome'])){
-            return false;
+            throw new \Exception("Nome inválido.", 1);
         }
 
         if(!isset($dados['email'])){
             throw new \Exception("Email inválido.", 1);
         }
 
+        if (!filter_var($dados['email'], FILTER_VALIDATE_EMAIL)) {
+            throw new \Exception("Email inválido [1].", 1);
+        }
+
         if(!isset($dados['senha'])){
             throw new \Exception("Senha inválida.", 1);
+        }
+
+        if(strlen($dados['senha']) < 8){
+            throw new \Exception("A senha deve conter no mínimo 8 caracteres.", 1);
         }
 
         if(!isset($dados['confirmar_senha'])){

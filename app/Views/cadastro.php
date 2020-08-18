@@ -77,7 +77,7 @@
                     </div>
                     
                    
-                    <form action="<?php echo site_url('usuario/post'); ?>" method="post" class="css-form-cadastro" >
+                    <form id="js-form-cadastro-usuario" action="<?php echo site_url('usuario/post'); ?>" method="post" class="css-form-cadastro" >
                         <div class="default-form" id="contact-form" >
                             <div class="row ">
                                 <div class="col-lg-12 col-md-12 col-sm-12 form-group">
@@ -120,6 +120,31 @@
 
 
 <?php echo view('header_script'); ?>
+
+<script>
+
+        function validarUsuario()
+        {
+            let form = new FormData($("#js-form-cadastro-usuario")[0])
+
+            console.log(form)
+            $.ajax({
+                method:"POST",
+                url:'<?=site_url('/API/usuarioAPI/new')?>',
+                data:form,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success:(d)=>{
+                    console.log(d)
+                },
+                error:(e)=>{
+                    alert(e.responseJSON.messages.error)
+                }
+            });
+        }
+
+    </script>
 
 </body>
 </html>

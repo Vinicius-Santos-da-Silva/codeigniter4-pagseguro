@@ -15,6 +15,7 @@ class Usuario extends BaseController
 
         try {
             $usuario = $usuarioModel->new($this->request->getPost());
+        
         } catch (\Exception $th) {
 
             $this->session->setFlashdata(['mensagem', $th->getMessage()]);
@@ -22,7 +23,5 @@ class Usuario extends BaseController
             return redirect()->back();
 
         }
-
-
     }
 }
