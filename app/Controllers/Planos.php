@@ -1,6 +1,7 @@
 <?php namespace App\Controllers;
 
-class Planos extends BaseController
+use CodeIgniter\Controller;
+class Planos extends Controller
 {
 	public function index()
 	{

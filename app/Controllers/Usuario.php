@@ -1,8 +1,9 @@
 <?php namespace App\Controllers;
 
+use CodeIgniter\Controller;
 use App\Models\UsuarioModel;
 
-class Usuario extends BaseController
+class Usuario extends Controller
 {
     public function new()
 	{
