@@ -15,14 +15,6 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
-
-      <?php if ($usuarioModel->estaLogado()) :?>
-      <li class="nav-item">
-        <a class="nav-link f-18 fw-600 text-dark" href="#" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
-          <?= $this->session->get('usuario')->nome ?>
-        </a>
-      </li>
-      <?php endif; ?>
       
       <?php if ($usuarioModel->estaLogado()) :?>
       <li class="nav-item">
@@ -71,6 +63,16 @@
         </a>
       </li>
       <?php endif; ?>
+
+      <?php if ($usuarioModel->estaLogado()) :?>
+      <li class="nav-item">
+        <a class="nav-link f-18 fw-600 text-dark css-btn-login" href="#" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <?= $this->session->get('usuario')->nome ?>
+        </a>
+      </li>
+      <?php endif; ?>
+
+
 
 
       <!-- <li class="nav-item dropdown">
