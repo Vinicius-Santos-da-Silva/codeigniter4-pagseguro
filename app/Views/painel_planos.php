@@ -47,7 +47,7 @@
                         </p>
                     </div>
                     <div class="card-footer text-center bg-white">
-                        <button class="btn css-button w-100 css-main-color">Selecionar</button>
+                        <a href="<?=site_url('checkout/1');?>" role="button" class="btn css-button w-100 css-main-color">Selecionar</a>
                     </div>
                 </div>
             </div>
@@ -77,7 +77,7 @@
                         </p>
                     </div>
                     <div class="card-footer text-center bg-white">
-                        <button class="btn css-button w-100 css-main-color">Selecionar</button>
+                        <a href="<?=site_url('checkout/2');?>" role="button" class="btn css-button w-100 css-main-color">Selecionar</a>
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@
                         </p>
                     </div>
                     <div class="card-footer text-center bg-white">
-                        <button class="btn css-button w-100 css-main-color">Selecionar</button>
+                        <a href="<?=site_url('checkout/3');?>" role="button" class="btn css-button w-100 css-main-color">Selecionar</a>
                     </div>
                 </div>
             </div>
