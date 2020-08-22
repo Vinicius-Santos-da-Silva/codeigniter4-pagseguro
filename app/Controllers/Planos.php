@@ -3,6 +3,7 @@
 use CodeIgniter\Controller;
 use App\Models\UsuarioHasProdutoModel;
 use App\Models\UsuarioModel;
+
 class Planos extends Controller
 {
 	public function index()

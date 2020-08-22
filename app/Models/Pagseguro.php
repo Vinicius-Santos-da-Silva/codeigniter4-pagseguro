@@ -18,8 +18,9 @@ class Pagseguro
     {
         $produtoModel = new ProdutoModel();
 
-        $string_post = $produtoModel->formatString($produto);
+        $produto->valor = $produtoModel->calculoValorFinalProduto($produto->valor);
 
+        $string_post = $produtoModel->formatString($produto);
 
         $curl = curl_init($this->url);
         curl_setopt($curl, CURLOPT_HTTPHEADER, array("Content-Type: application/x-www-form-urlencoded; charset=UTF-8"));

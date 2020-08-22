@@ -1,6 +1,7 @@
 <?php namespace App\Models;
 
 use CodeIgniter\Model;
+use App\Models\UsuarioModel;
 
 class ProdutoModel extends Model
 {
@@ -35,6 +36,19 @@ class ProdutoModel extends Model
         $string .= "itemAmount1=$produto->valor";
 
         return $string;
+
+    }
+
+    
+
+    public function calculoValorFinalProduto(float $valor_produto)
+    {
+
+        $usuario_model = new UsuarioModel();
+
+        $valor_produto = $valor_produto - $usuario_model->valoresPagos();
+
+        return $valor_produto;
 
     }
 

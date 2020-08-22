@@ -1,6 +1,8 @@
 <?php namespace App\Models;
 
 use CodeIgniter\Model;
+use App\Models\UsuarioHasProdutoModel;
+use App\Models\ProdutoModel;
 
 class UsuarioModel extends Model
 {
@@ -105,4 +107,77 @@ class UsuarioModel extends Model
 
         return true;
     }
+
+    public function getUsuarioSessao()
+    {
+        $session = \Config\Services::session();
+        
+        $usuario = $session->get('usuario');
+
+        return $usuario;
+    }
+
+    public function hasPlano(int $id_plano)
+    {
+
+        if(!$this->estaLogado()){
+            return false;
+        }
+
+        $produto_model = new ProdutoModel();
+
+        $produto = $produto_model->find($id_plano);
+
+        if (!$produto) {
+            return false;
+        }
+
+        $usuario = $this->getUsuarioSessao();
+
+        $usuario_has_plano_model = new UsuarioHasProdutoModel();
+
+        $planos_usuario_rl = $usuario_has_plano_model->where(['usuario_id' => $usuario->id , 'produto_id' => $id_plano])->find();
+
+        if (!$planos_usuario_rl) {
+            return false;
+        }
+
+        return true;
+
+    }
+
+    public function valoresPagos()
+    {
+
+        if(!$this->estaLogado()){
+            return 0.0;
+        }
+
+        $usuario = $this->getUsuarioSessao();
+
+        $usuario_has_plano_model = new UsuarioHasProdutoModel();
+
+        $planos_usuario_rl = $usuario_has_plano_model->where(['usuario_id' => $usuario->id])->find();
+
+        $produto_model = new ProdutoModel();
+
+        $valorTotal = 0.000;
+
+        foreach ($planos_usuario_rl as $key => $rl) {
+
+           $produto = $produto_model->find($rl->produto_id);
+
+           $valorTotal += $produto->valor;
+        }
+
+        return $valorTotal;
+
+    }
 }
+
+
+
+
+
+
+

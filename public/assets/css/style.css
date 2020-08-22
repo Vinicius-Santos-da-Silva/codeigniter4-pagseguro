@@ -162,3 +162,12 @@ html,body {
     padding-left: 20px!important;
     margin-left: 20px;
 }
+
+.disabled {
+    color: #adb5bd!important;
+}
+
+.plano-adquirido{
+    border-color: blue;
+    background: blue;
+}
