@@ -27,7 +27,6 @@ class ProdutoModel extends Model
 
         $produto->valor = number_format($produto->valor, 2, '.', '');
 
-
         $string = "";
         $string .= "currency=BRL&";
         $string .= "itemId1=$produto->id&";
@@ -38,8 +37,6 @@ class ProdutoModel extends Model
         return $string;
 
     }
-
-    
 
     public function calculoValorFinalProduto(float $valor_produto)
     {

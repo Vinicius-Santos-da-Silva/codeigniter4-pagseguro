@@ -136,14 +136,24 @@ class UsuarioModel extends Model
 
         $usuario_has_plano_model = new UsuarioHasProdutoModel();
 
-        $planos_usuario_rl = $usuario_has_plano_model->where(['usuario_id' => $usuario->id , 'produto_id' => $id_plano])->find();
+        $planos_usuario_rl = $usuario_has_plano_model->where(['usuario_id' => $usuario->id , 'produto_id' => $id_plano])->first();
 
-        if (!$planos_usuario_rl) {
+        $planos_usuario_rl_last = $usuario_has_plano_model->where(['usuario_id' => $usuario->id])->orderBy('produto_id desc')->find();
+
+
+        foreach ($planos_usuario_rl_last as $key => $rl) {
+
+            if($rl->produto_id >= $id_plano){
+                return true;
+            }
+            
+        }
+
+        if(!$planos_usuario_rl){
             return false;
         }
 
         return true;
-
     }
 
     public function valoresPagos()
@@ -157,18 +167,15 @@ class UsuarioModel extends Model
 
         $usuario_has_plano_model = new UsuarioHasProdutoModel();
 
-        $planos_usuario_rl = $usuario_has_plano_model->where(['usuario_id' => $usuario->id])->find();
+        $planos_usuario_rl = $usuario_has_plano_model->where(['usuario_id' => $usuario->id])->orderBy('produto_id desc')->first();
 
         $produto_model = new ProdutoModel();
 
         $valorTotal = 0.000;
+        
+        $produto = $produto_model->find($planos_usuario_rl->produto_id);
 
-        foreach ($planos_usuario_rl as $key => $rl) {
-
-           $produto = $produto_model->find($rl->produto_id);
-
-           $valorTotal += $produto->valor;
-        }
+        $valorTotal += $produto->valor;
 
         return $valorTotal;
 
