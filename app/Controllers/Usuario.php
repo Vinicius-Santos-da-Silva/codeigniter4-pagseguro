@@ -5,6 +5,7 @@ use App\Models\UsuarioModel;
 
 class Usuario extends Controller
 {
+
     public function new()
 	{
         return view('cadastro');
@@ -12,14 +13,19 @@ class Usuario extends Controller
 
     public function post()
 	{
+        $session = \Config\Services::session();
+
         $usuarioModel = new UsuarioModel();
 
         try {
             $usuario = $usuarioModel->new($this->request->getPost());
-        
+            
+            return redirect()->to('/home');
+            
         } catch (\Exception $th) {
 
-            $this->session->setFlashdata(['mensagem', $th->getMessage()]);
+            die($th->getMessage());
+            $session->setFlashdata(['mensagem', $th->getMessage()]);
 
             return redirect()->back();
 

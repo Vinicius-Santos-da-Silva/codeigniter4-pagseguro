@@ -48,14 +48,6 @@
       </li>
       <?php endif; ?>
 
-      <?php if ($usuarioModel->estaLogado()) :?>
-      <li class="nav-item">
-        <a href="<?php echo site_url('login/logout'); ?>" class="nav-link f-18 fw-600 text-dark" href="#" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
-          Sair
-        </a>
-      </li>
-      <?php endif; ?>
-
       <?php if (!$usuarioModel->estaLogado()) :?>
       <li class="nav-item">
         <a href="<?php echo site_url('login'); ?>" class="nav-link f-18 fw-600 text-dark css-btn-login" href="#" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -63,32 +55,21 @@
         </a>
       </li>
       <?php endif; ?>
-
+   
       <?php if ($usuarioModel->estaLogado()) :?>
-      <li class="nav-item">
-        <a class="nav-link f-18 fw-600 text-dark css-btn-login" href="#" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle f-18 fw-600 text-dark css-btn-login" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <?= $this->session->get('usuario')->nome ?>
-        </a>
-      </li>
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="<?php echo site_url('perfil'); ?>">Meu Perfil</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="<?php echo site_url('login/logout'); ?>">Sair</a>
+          </div>
+        </li>
       <?php endif; ?>
 
-
-
-
-      <!-- <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle f-18 fw-600 text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Nome do Usuário
-        </a>
-
-
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="<?php echo site_url('planos'); ?>">Planos</a>
-          <a class="dropdown-item" href="<?php echo site_url('usuario/new'); ?>">Usuario</a>
-			    <a class="dropdown-item" href="<?php echo site_url('login/logout'); ?>">Sair</a>
-          <div class="dropdown-divider"></div>
-			    <a class="dropdown-item" href="<?php echo site_url('/home'); ?>">Dashboard</a>
-        </div>
-      </li> -->
     </ul>
   </div>
 </div>    
