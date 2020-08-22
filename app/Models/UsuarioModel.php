@@ -169,6 +169,10 @@ class UsuarioModel extends Model
 
         $planos_usuario_rl = $usuario_has_plano_model->where(['usuario_id' => $usuario->id])->orderBy('produto_id desc')->first();
 
+        if(!$planos_usuario_rl){
+            return 0.00;
+        }
+        
         $produto_model = new ProdutoModel();
 
         $valorTotal = 0.000;
