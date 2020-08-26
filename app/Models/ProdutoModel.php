@@ -32,10 +32,10 @@ class ProdutoModel extends Model
         $string .= "itemId1=$produto->id&";
         $string .= "itemDescription1=$produto->descricao&";
         $string .= "itemQuantity1=1&";
-        $string .= "itemAmount1=$produto->valor";
+        $string .= "reference=$produto->solicitacao_id&";
+        $string .= "itemAmount1=$produto->valor";        
 
         return $string;
-
     }
 
     public function calculoValorFinalProduto(float $valor_produto)

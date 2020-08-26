@@ -103,7 +103,17 @@ $usuario_model = new UsuarioModel();
                             </p>
                         </div>
                         <div class="card-footer text-center bg-white">
-                            <a href="<?=site_url('checkout/2');?>" role="button" class="btn css-button w-100 css-main-color">Selecionar</a>
+                            <?php if($usuario_model->hasPlano(2)): ?>
+
+                                <a href="#" role="button" class="disabled plano-adquirido btn css-button w-100 css-main-color">Já adquirido
+                                </a>
+
+                            <?php else: ?>
+
+                                <a href="<?=site_url('checkout/2');?>" role="button" class="btn css-button w-100 css-main-color">Selecionar
+                                </a>
+
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -135,7 +145,17 @@ $usuario_model = new UsuarioModel();
                             </p>
                         </div>
                         <div class="card-footer text-center bg-white">
-                            <a href="<?=site_url('checkout/3');?>" role="button" class="btn css-button w-100 css-main-color">Selecionar</a>
+                            <?php if($usuario_model->hasPlano(3)): ?>
+
+                                <a href="#" role="button" class="disabled plano-adquirido btn css-button w-100 css-main-color">Já adquirido
+                                </a>
+
+                                <?php else: ?>
+
+                                <a href="<?=site_url('checkout/3');?>" role="button" class="btn css-button w-100 css-main-color">Selecionar
+                                </a>
+
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

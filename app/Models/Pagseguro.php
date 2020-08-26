@@ -1,6 +1,7 @@
 <?php namespace App\Models;
 
 use App\Models\ProdutoModel;
+use App\Models\SolicitacaoPagamentoModel as SolicitacaoPagamento;
 
 
 class Pagseguro
@@ -17,6 +18,10 @@ class Pagseguro
     public function solicitarCodigoPagamento(object $produto)
     {
         $produtoModel = new ProdutoModel();
+        
+        $solicitacao_pagamento_model = new SolicitacaoPagamento();
+
+        $produto->solicitacao_id = $solicitacao_pagamento_model->solicitar($produto->id);
 
         $produto->valor = $produtoModel->calculoValorFinalProduto($produto->valor);
 
@@ -34,6 +39,30 @@ class Pagseguro
         $xml = simplexml_load_string($retorno);
         
         $response = json_decode(json_encode($xml));
+
+        $solicitacao_pagamento_model->setCodigoCheckout($produto->solicitacao_id , $response->code);
+
+        return $response;
+    }
+
+    public function consultarDetalhesTransacao(string $transacao_id)
+    {
+    
+        $url = "https://ws.".getenv('pagseguro.url')."/v3/transactions/".$transacao_id."?email=".$this->email."&token=".$this->token."";
+
+        $curl = curl_init($url);
+
+        curl_setopt($curl, CURLOPT_HTTPHEADER, array());
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, true);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        $retorno = curl_exec($curl);
+        curl_close($curl);
+
+        $xml = simplexml_load_string($retorno);
+        
+        $response = json_decode(json_encode($xml));
+        // echo "<pre>";
+        // print_r($response);die();
 
         return $response;
     }

@@ -8,14 +8,14 @@ class UsuarioHasProdutoModel extends Model
     protected $primaryKey = 'id';
 
     protected $returnType     = 'object';
-    protected $useSoftDeletes = false;
+    protected $useSoftDeletes = true;
 
     protected $allowedFields = ['usuario_id', 'produto_id' , 'datahora_cadastro'];
 
     protected $useTimestamps = true;
-    protected $createdField  = '';
-    protected $updatedField  = '';
-    protected $deletedField  = '';
+    protected $createdField  = 'datahora_cadastro';
+    protected $updatedField  = 'datahora_atualizacao';
+    protected $deletedField  = 'datahora_desativacao';
 
     protected $validationRules    = [];
     protected $validationMessages = [];
