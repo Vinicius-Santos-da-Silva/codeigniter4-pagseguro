@@ -51,7 +51,7 @@
                                     
                                 </div>
 
-                                <div class="col-lg-6 col-md-6 col-sm-12 form-group"> 
+                                <!-- <div class="col-lg-6 col-md-6 col-sm-12 form-group"> 
                                     <span class="">
                                         <input type="password" name="senha" value="" size="40" class="form-control" aria-invalid="false" placeholder="Senha">
                                     </span>
@@ -61,10 +61,10 @@
                                     <span class="">
                                         <input type="password" name="confirmar_senha" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" placeholder="Confirmar senha">
                                     </span>
-                                </div>
+                                </div> -->
                  
                                 <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn"> 
-                                    <button class="css-button-color">Atualizar</button>
+                                    <a onclick="atualizarPerfil(<?=$usuario->id?>)" class="css-button-color">Atualizar</a>
                                 </div>
                             </div>
                         </div>  

@@ -13,7 +13,6 @@ class UsuarioAPI extends Controller
     {
         $usuarioModel = new UsuarioModel();
 
-        // print_r($this->request->getPost());die();
         try {
             
             $usuario = $usuarioModel->new($this->request->getPost());
@@ -26,5 +25,29 @@ class UsuarioAPI extends Controller
         $usuario->status = 200;
 
         return $this->respond($usuario,200);
+    }
+
+    public function atualizar($id)
+    {
+
+        $usuario_model = new UsuarioModel();
+        $usuario = $usuario_model->find($id);
+
+        if(!$usuario){
+            return $this->failValidationError('Usuário inválido');
+        }
+                
+        $usuario_up['nome'] = $this->request->getVar('nome');
+        $usuario_up['estado'] = $this->request->getVar('estado');
+        $usuario_up['cidade'] = $this->request->getVar('cidade');
+
+        $usuario_model->update($usuario->id , $usuario_up);
+
+        $usuario = $usuario_model->find($id);
+
+        $this->session = \Config\Services::session();   
+        $this->session->set('usuario' , $usuario);
+        
+        return $this->respond($usuario);
     }
 }

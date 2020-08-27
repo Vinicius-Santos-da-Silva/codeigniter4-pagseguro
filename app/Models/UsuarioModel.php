@@ -12,7 +12,7 @@ class UsuarioModel extends Model
     protected $returnType     = 'object';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['nome', 'email' , 'senha'];
+    protected $allowedFields = ['nome', 'email' , 'senha', 'cidade' , 'estado'];
 
     protected $useTimestamps = true;
     protected $createdField  = 'datahora_cadastro';
