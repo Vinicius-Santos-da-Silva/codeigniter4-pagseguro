@@ -7,7 +7,9 @@
 
 <nav class="navbar navbar-expand-md navbar-white fixed-top bg-white css-navbar py-2">
     <div class="container">
-  <a class="navbar-brand text-dark fw-600 f-18" href="#"><img src="https://secureservercdn.net/45.40.144.60/b8k.8f1.myftpupload.com/wp-content/uploads/2020/08/cropped-logo-1-1.png?time=1597881167" alt="Logo"></a>
+  <a class="navbar-brand text-dark fw-600 f-18" href="#">
+    <!-- <img src="" alt="Logo"> -->
+  </a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
