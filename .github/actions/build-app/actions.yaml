@@ -1,0 +1,5 @@
+name: 'build-app'
+description: 'Runs App Codeigniter'
+run:
+  using: 'Docker'
+  image: 'Dockerfile'
