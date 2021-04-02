@@ -16,6 +16,7 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\UsuarioModel;
+use App\Libraries\Log;
 
 class BaseController extends Controller
 {
@@ -41,7 +42,9 @@ class BaseController extends Controller
 		// Preload any models, libraries, etc, here.
 		//--------------------------------------------------------------------
 		// E.g.:
-		$this->session = \Config\Services::session();	
+		$this->session = \Config\Services::session();
+		
+		set_exception_handler([new Log(), 'exceptionHandler']);
 	}
 
 
@@ -49,7 +52,6 @@ class BaseController extends Controller
 	{
 
 		$usuarioModel = new UsuarioModel();
-		
 		if(!$usuarioModel->estaLogado())
 		{
 			return redirect()->to(site_url('/login'));
