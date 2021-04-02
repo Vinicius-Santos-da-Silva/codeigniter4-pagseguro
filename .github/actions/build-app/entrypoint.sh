@@ -1,3 +1,3 @@
 #!/bin/sh
-sudo rm -rf writable/cache
-sudo rm -rf writable/session
+rm -rf writable/cache
+rm -rf writable/session
