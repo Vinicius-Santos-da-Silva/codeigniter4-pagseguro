@@ -1,0 +1,5 @@
+name: 'composer-install'
+description: 'Runs PHP Composer with Codeigniter 4'
+run:
+  using: 'Docker'
+  image: 'Dockerfile'
