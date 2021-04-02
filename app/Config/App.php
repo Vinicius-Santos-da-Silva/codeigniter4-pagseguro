@@ -21,7 +21,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://pagseguro-codeigniter.herokuapp.com';
+	public $baseURL = 'http://pagseguro-codeigniter.herokuapp.com/';
 
 	/*
 	|--------------------------------------------------------------------------
