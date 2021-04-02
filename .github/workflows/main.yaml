@@ -10,4 +10,4 @@ jobs:
       - uses: ./.github/actions/composer
       - uses: ./.github/actions/build-app
       #- run: ./vendor/bin/phpunit
-      - run: ./vendor/bin/phpcs
+      #- run: ./vendor/bin/phpcs
