@@ -1,0 +1,9 @@
+name: Codeigniter Workflow
+on: push
+
+jobs:
+  build:
+    name: Codeigniter build
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: action/checkout@v1
