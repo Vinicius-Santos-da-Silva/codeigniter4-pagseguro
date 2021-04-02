@@ -21,7 +21,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://catavoto.plug-in.fun/';
+	public $baseURL = 'https://pagseguro-codeigniter.herokuapp.com/';
 
 	/*
 	|--------------------------------------------------------------------------
