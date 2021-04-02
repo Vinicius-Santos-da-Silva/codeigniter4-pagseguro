@@ -9,3 +9,5 @@ jobs:
       - uses: actions/checkout@v1
       - uses: ./.github/actions/composer
       - uses: ./.github/actions/build-app
+      #- run: ./vendor/bin/phpunit
+      - run: ./vendor/bin/phpcs
