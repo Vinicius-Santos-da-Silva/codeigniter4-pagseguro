@@ -1,7 +1,7 @@
 <?php
 
-phpinfo();
-die();
+// phpinfo();
+// die();
 
 // Valid PHP Version?
 $minPHPVersion = '7.2';
