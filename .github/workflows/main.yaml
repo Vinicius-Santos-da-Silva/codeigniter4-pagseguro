@@ -1,5 +1,9 @@
 name: Codeigniter Workflow
-on: push
+on: 
+  push:
+    branches:
+      - master
+
 
 jobs:
   build:
