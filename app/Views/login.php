@@ -21,7 +21,7 @@
                 } ?>
                     
 
-                    <h1 class="fw-700">Data Analytics Techniques with 
+                    <h1 class="fw-700">Techniques with 
                         <span class="css-main-color">Detox</span> Systems.
                     </h1>
                     <p class="mt-4 fw-400 f-16 text-muted lh-30">Detox's real-time data management technologies, global data marketplaces, and award-winning customer service make our unstacked data solutions.</p>
