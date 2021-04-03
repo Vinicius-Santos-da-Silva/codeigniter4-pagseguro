@@ -30,7 +30,6 @@ class Database extends \CodeIgniter\Database\Config
 	 * @var array
 	 */
 	public $default = [
-		
 		'DSN'      => '',
 		'hostname' => 'sql10.freemysqlhosting.net',
 		'username' => 'sql10403085',
