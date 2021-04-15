@@ -13,6 +13,8 @@
 	<div style="max-width:50%;max-height:15%" class="container">
 		<canvas id="myChart"></canvas>
 	</div>
+
+	
 	
 	<script>
 		var ctx = document.getElementById('myChart').getContext('2d');
