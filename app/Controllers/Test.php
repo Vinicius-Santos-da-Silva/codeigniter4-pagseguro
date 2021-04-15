@@ -18,7 +18,7 @@ class Test extends Controller
         echo "teste env.";
         echo PHP_EOL;
 
-        die(getenv('TESTE'));
+        die(getenv($_GET['q']));
     }
     
 }
