@@ -12,13 +12,15 @@ class Test extends Controller
 		$this->session = \Config\Services::session();	
     }
     
-	// public function index()
-	// {
-    //     echo PHP_EOL;
-    //     echo "teste env.";
-    //     echo PHP_EOL;
+	public function index()
+	{
+        throw new \Exception("Error Processing Request", 1);
+        
+        echo PHP_EOL;
+        echo "teste env.";
+        echo PHP_EOL;
 
-    //     die(getenv($_GET['q']));
-    // }
+        die(getenv($_GET['q']));
+    }
     
 }

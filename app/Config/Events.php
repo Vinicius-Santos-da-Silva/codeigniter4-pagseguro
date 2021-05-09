@@ -49,4 +49,11 @@ Events::on('pre_system', function () {
 		Events::on('DBQuery', 'CodeIgniter\Debug\Toolbar\Collectors\Database::collect');
 		Services::toolbar()->respond();
 	}
+
+	\CodeIgniter\Events\Events::trigger('enable_services');
+
+});
+
+Events::on('enable_services', function () {
+	Services::logs(true);
 });

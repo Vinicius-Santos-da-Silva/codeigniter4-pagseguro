@@ -27,4 +27,14 @@ class Services extends CoreServices
 	//
 	//        return new \CodeIgniter\Example();
 	//    }
+
+	public static function logs($getShared = true)
+	{
+		if ($getShared)
+		{
+			return static::getSharedInstance('logs');
+		}
+	
+		return new \App\Libraries\LogHandler();
+	}
 }

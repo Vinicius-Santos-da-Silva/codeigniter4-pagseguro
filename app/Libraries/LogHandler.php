@@ -2,23 +2,22 @@
 
 namespace App\Libraries;
 
-class Log
+class LogHandler
 {
     public function __construct()
     {
-        
+		set_exception_handler([$this, 'exceptionHandler']);   
     }
 
     public function exceptionHandler(\Throwable $exception)
     {
-        
         $exception_json = $this->getException($exception);
+        
+        $request = service('request');
 
-        // echo "<pre>";
-        header('content-type:application/json');
-        echo (json_encode($exception_json));
-        die();
+        // header('content-type:application/json');
 
+        // echo (json_encode($exception_json));die();
     }
 
     private function getException(\Throwable $exception)
